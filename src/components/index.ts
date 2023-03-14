@@ -1,4 +1,5 @@
 import Calculator from "./Calculator/Calculator";
 import Home from "./Home/Home";
+import Form from "./Form/Form";
 
-export { Calculator, Home };
+export { Calculator, Home, Form };

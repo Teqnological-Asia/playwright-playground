@@ -1,6 +1,6 @@
 import { FC, Fragment } from "react";
 import { Route, Routes, Link } from "react-router-dom";
-import { Calculator, Home } from "./components";
+import { Calculator, Home, Form } from "./components";
 
 const App: FC = () => {
   return (
@@ -13,11 +13,15 @@ const App: FC = () => {
           <li>
             <Link to="/calculator">Calculator</Link>
           </li>
+          <li>
+            <Link to="/form">Form</Link>
+          </li>
         </ul>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculator" element={<Calculator />} />
+        <Route path="/form" element={<Form />} />
       </Routes>
     </Fragment>
   );
