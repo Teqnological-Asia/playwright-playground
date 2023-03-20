@@ -1,0 +1,72 @@
+name: Playwright Tests
+on:
+  push:
+    tags-ignore:
+      - "**"
+    branches:
+      - "develop"
+      - "master"
+      - "stg-qa"
+      - "stg-gr"
+      - "ph**"
+      - "feature/**"
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_ROLE_ARN: "arn:aws:iam::102879320332:role/pang_app_vrt"
+  REG_S3_BUCKET_NAME: "pang-app-vrt-y27"
+
+jobs:
+  test:
+    if: github.event.pull_request.draft == false
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_ARN }}
+          aws-region: ap-northeast-1
+      - name: assume role
+        run: aws sts get-caller-identity
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: ".node-version"
+          cache: "yarn"
+          cache-dependency-path: "**/yarn.lock"
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: |
+          CI=true yarn test
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 2
+      - name: workaround for detached HEAD on pull_request
+        if: github.event_name == 'pull_request'
+        run: |
+          git checkout ${GITHUB_HEAD_REF} || git checkout -b ${GITHUB_HEAD_REF} && git pull
+      - name: workaround for detached HEAD on push
+        if: github.event_name == 'push'
+        run: |
+          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
+      - name: vrt
+        env:
+          REG_GITHUB_CLIENT_ID: ${{ secrets.REG_GITHUB_CLIENT_ID }}
+          REG_S3_BUCKET_NAME: ${{ env.REG_S3_BUCKET_NAME }}
+        run: yarn vrt
