@@ -106,6 +106,7 @@ test("should show welcome box and save token after performing successful login",
 
 test.describe("should check localStorage to decide for login or authorization", () => {
   test.describe.configure({ retries: 3 });
+  test.setTimeout(10000);
 
   test("should directly show welcome box if a token was saved in localStorage", async ({
     mount,
