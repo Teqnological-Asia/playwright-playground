@@ -1,5 +1,6 @@
 import { FC, useState } from "react";
 import { API } from "./components";
+import "../../index.css";
 
 interface IAPI {
   title: string;

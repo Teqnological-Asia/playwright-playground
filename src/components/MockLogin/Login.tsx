@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import jwt_decode from "jwt-decode";
 import { ILoginRequest, ILoginResponse, IUser, IAuthorizationResponse } from "./types";
 import { WelcomeBox, ResetButton } from "./components";
+import "../../index.css";
 
 const LOGIN_ENDPOINT = "https://playwright.free.beeceptor.com/mock-login";
 const AUTH_ENDPOINT = "https://playwright.free.beeceptor.com/mock-authorize";

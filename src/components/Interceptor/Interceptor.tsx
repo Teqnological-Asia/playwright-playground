@@ -2,6 +2,7 @@ import { FC, useState, useEffect, Fragment } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "../../index.css";
 
 const SAVING_ENDPOINT = "https://catfact.ninja/fact";
 const ANALYTICS_ENDPOINT = "https://www.boredapi.com/api/activity";

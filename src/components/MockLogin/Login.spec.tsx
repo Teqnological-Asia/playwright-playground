@@ -53,27 +53,31 @@ test.beforeEach(async ({ page }) => {
   await mockSetLocalStorage(page);
 });
 
-test("should render", async ({ mount }) => {
+test("should render", async ({ mount, page }) => {
+  await clearLocalStorage(page);
   const component = await mount(<Login />);
   await expect(component).toContainText("This a mock login page");
 });
 
 test.describe("should render errors when missing inputs", () => {
-  test("should render error when missing ID", async ({ mount }) => {
+  test("should render error when missing ID", async ({ mount, page }) => {
+    await clearLocalStorage(page);
     const component = await mount(<Login />);
     await component.getByLabel("Password").fill("somepassword");
     await component.getByRole("button", { name: "Sign in" }).click();
     await expect(component).toContainText("ID is missing");
   });
 
-  test("should render error when missing password", async ({ mount }) => {
+  test("should render error when missing password", async ({ mount, page }) => {
+    await clearLocalStorage(page);
     const component = await mount(<Login />);
     await component.getByLabel("Your ID").fill("someid");
     await component.getByRole("button", { name: "Sign in" }).click();
     await expect(component).toContainText("Password is missing");
   });
 
-  test("should render error when missing both inputs", async ({ mount }) => {
+  test("should render error when missing both inputs", async ({ mount, page }) => {
+    await clearLocalStorage(page);
     const component = await mount(<Login />);
     await component.getByRole("button", { name: "Sign in" }).click();
     await expect(component).toContainText("ID is missing");
