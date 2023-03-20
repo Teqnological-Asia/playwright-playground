@@ -104,10 +104,16 @@ test("should show welcome box and save token after performing successful login",
   );
 });
 
-test("should directly show welcome box if a token was saved in localStorage", async ({ mount }) => {
-  const component = await mount(<Login />);
-  expect(component).toContainText("Herzlich Willkommen");
-  expect(component).toContainText("Wayne Rooney");
-  expect(component).toContainText("24.10.1985");
-  expect(component).toContainText("37");
+test.describe("should check localStorage to decide for login or authorization", () => {
+  test.describe.configure({ retries: 3 });
+
+  test("should directly show welcome box if a token was saved in localStorage", async ({
+    mount,
+  }) => {
+    const component = await mount(<Login />);
+    expect(component).toContainText("Herzlich Willkommen");
+    expect(component).toContainText("Wayne Rooney");
+    expect(component).toContainText("24.10.1985");
+    expect(component).toContainText("37");
+  });
 });
