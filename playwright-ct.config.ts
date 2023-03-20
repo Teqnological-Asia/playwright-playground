@@ -23,7 +23,9 @@ export default defineConfig({
   use: {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
-
+    screenshot: "on",
+    video: "on",
+    baseURL: "https://restcountries.com/v3.1/",
     /* Port to use for Playwright component endpoint. */
     ctPort: 3100,
   },

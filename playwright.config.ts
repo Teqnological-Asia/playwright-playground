@@ -41,6 +41,7 @@ export default defineConfig({
     trace: "on-first-retry",
     screenshot: "on",
     video: "on",
+    baseURL: "https://restcountries.com/v3.1/",
   },
 
   /* Configure projects for major browsers */

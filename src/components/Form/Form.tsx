@@ -10,8 +10,7 @@ const Form: FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
   const findCountry = async (country: string) => {
-    setCountry(null);
-    setError(null);
+    reset();
     setLoading(true);
     try {
       const { data } = await axios.get(`${ENDPOINT}/${country}`);
@@ -22,6 +21,11 @@ const Form: FC = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const reset = () => {
+    setCountry(null);
+    setError(null);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -40,7 +44,7 @@ const Form: FC = () => {
         <h1>Official name: {country.name.official}</h1>
         <p>Capital: {country.capital[0]}</p>
         <p>Region: {country.region}</p>
-        <p>Sub Region {country.subregion}</p>
+        <p>Sub Region: {country.subregion}</p>
         <p>Population: {country.population}</p>
       </div>
     );

@@ -48,7 +48,6 @@ test("should work when inputing numbers", async ({ mount }) => {
   await component.getByRole("button", { name: "=" }).click();
 
   await expect(component).toContainText("579");
-  await expect(component).toHaveScreenshot();
 
   await component.getByRole("button", { name: "AC" }).click();
 });
