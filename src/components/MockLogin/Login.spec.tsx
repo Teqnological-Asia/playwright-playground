@@ -110,8 +110,10 @@ test.describe("should check localStorage to decide for login or authorization", 
 
   test("should directly show welcome box if a token was saved in localStorage", async ({
     mount,
+    page,
   }) => {
     const component = await mount(<Login />);
+    await page.waitForSelector("h4");
     expect(component).toContainText("Herzlich Willkommen");
     expect(component).toContainText("Wayne Rooney");
     expect(component).toContainText("24.10.1985");
