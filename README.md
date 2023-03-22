@@ -1,15 +1,8 @@
 ## Playwright VTR Playground
 
-#### Example:
-
-TweetWorld 
-
-An application used to filter data form Twitter based on user preference, built with React, Redux, JavaScript, and CSS.
+Codebase for multiple testing cases built with Vite, React, TypeScript and Playwright
 
 ## Project Status
-(only necessary if incomplete)
-
-#### Example:
 
 This project is currently in development. Users can filter tweets by username and keyword and see visual data representation. Functionality to sort by additional parameters is in progress.
 
@@ -20,12 +13,12 @@ Clone down this repository. You will need `node` and `yarn` installed globally o
 
 Installation:
 
-`yarn install`  
+```yarn install```
 
 To Run Test Suite:  
 
-`yarn test-cr`  
+```yarn test-cr```  
 
 To Start Dev Server:
 
-`yarn dev`  
+```yarn dev```  
