@@ -15,8 +15,7 @@
       "clientId": "$REG_GITHUB_CLIENT_ID"
     },
     "reg-publish-s3-plugin": {
-      "bucketName": "$REG_S3_BUCKET_NAME",
-      "acl": "private"
+      "bucketName": "$REG_S3_BUCKET_NAME"
     }
   }
 }
