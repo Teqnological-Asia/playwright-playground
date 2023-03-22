@@ -67,6 +67,6 @@ jobs:
           git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
       - name: vrt
         env:
-          REG_GITHUB_CLIENT_ID: ${{ secrets.REG_GITHUB_CLIENT_ID }}
-          REG_S3_BUCKET_NAME: ${{ env.REG_S3_BUCKET_NAME }}
+          REG_GITHUB_CLIENT_ID: ${{ secrets.VITE_REG_GITHUB_CLIENT_ID }}
+          REG_S3_BUCKET_NAME: ${{ env.VITE_S3_BUCKET_NAME }}
         run: yarn vrt
