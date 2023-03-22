@@ -4,6 +4,7 @@ import Calculator from "./Calculator";
 test("should renders", async ({ mount }) => {
   const component = await mount(<Calculator />);
   await expect(component).toContainText("0");
+  await component.screenshot({ path: "directory_contains_actual_images/calculator.png" });
 });
 
 test("should have all buttons", async ({ mount }) => {
