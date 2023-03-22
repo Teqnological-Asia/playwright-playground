@@ -35,3 +35,11 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 2
+      - name: workaround for detached HEAD on pull_request
+        if: github.event_name == 'pull_request'
+        run: |
+          git checkout ${GITHUB_HEAD_REF} || git checkout -b ${GITHUB_HEAD_REF} && git pull
+      - name: workaround for detached HEAD on push
+        if: github.event_name == 'push'
+        run: |
+          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
