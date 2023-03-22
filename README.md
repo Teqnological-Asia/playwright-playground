@@ -13,12 +13,12 @@ Clone down this repository. You will need `node` and `yarn` installed globally o
 
 Installation:
 
-```yarn install```
+``yarn install``
 
 To Run Test Suite:  
 
-```yarn test-cr```  
+``yarn test-cr`` 
 
 To Start Dev Server:
 
-```yarn dev```  
+``yarn dev``  
