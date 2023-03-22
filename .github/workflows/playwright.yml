@@ -11,6 +11,8 @@ on:
 
 env:
   REG_S3_BUCKET_NAME: "fe-test-e2e-ma3e69"
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 jobs:
   test:
