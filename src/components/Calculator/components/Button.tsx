@@ -40,7 +40,7 @@ const colorToCss = (color: ButtonProps["color"]) => {
   }
 
   return css`
-    background-color: #2e2e2e;
+    background-color: blue;
     color: #fff;
     &:hover,
     &:focus {
