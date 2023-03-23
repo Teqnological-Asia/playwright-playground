@@ -1,3 +1,3 @@
-import API from "./API";
+import API from "@/components/API Mocking/components/API";
 
 export { API };

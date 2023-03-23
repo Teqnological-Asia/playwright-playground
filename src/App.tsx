@@ -1,7 +1,7 @@
 import { FC, Fragment } from "react";
 import { Route, Routes, Link } from "react-router-dom";
-import { Calculator, Home, Form, Mocking, Interceptor, Login } from "./components";
-import routes from "./routes";
+import { Calculator, Home, Form, Mocking, Interceptor, Login } from "@/components";
+import routes from "@/routes";
 
 const App: FC = () => {
   return (

@@ -1,8 +1,8 @@
-import Calculator from "./Calculator/Calculator";
-import Home from "./Home/Home";
-import Form from "./Form/Form";
-import Mocking from "./API Mocking/Mocking";
-import Interceptor from "./Interceptor/Interceptor";
-import Login from "./MockLogin/Login";
+import Calculator from "@/components/Calculator/Calculator";
+import Home from "@/components/Home/Home";
+import Form from "@/components/Form/Form";
+import Mocking from "@/components/API Mocking/Mocking";
+import Interceptor from "@/components/Interceptor/Interceptor";
+import Login from "@/components/MockLogin/Login";
 
 export { Calculator, Home, Form, Mocking, Interceptor, Login };

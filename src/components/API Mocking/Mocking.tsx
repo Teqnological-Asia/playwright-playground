@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
-import { API } from "./components";
-import "../../index.css";
+import { API } from "@/components/API Mocking/components";
 
 interface IAPI {
   title: string;

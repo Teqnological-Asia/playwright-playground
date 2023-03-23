@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/experimental-ct-react";
-
+import * as path from "path";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -28,6 +31,15 @@ export default defineConfig({
     baseURL: "https://restcountries.com/v3.1/",
     /* Port to use for Playwright component endpoint. */
     ctPort: 3100,
+    ctViteConfig: {
+      resolve: {
+        alias: {
+          "@": path.resolve(__dirname, "./src"),
+          "@assets": path.resolve(__dirname, "./src/assets"),
+          "@components": path.resolve(__dirname, "./src/components"),
+        },
+      },
+    },
   },
 
   /* Configure projects for major browsers */
