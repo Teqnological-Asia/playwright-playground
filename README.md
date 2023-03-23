@@ -1,10 +1,10 @@
-## Playwright VTR Playground
+## Playwright and Visual Regression Testing (reg-suit) Playground
 
-Codebase for multiple testing cases built with Vite, React, TypeScript and Playwright
+Codebase for multiple testing cases built with Vite, React, TypeScript, Playwright and reg-suit.
 
 ## Project Status
 
-This project is currently in development. Users can filter tweets by username and keyword and see visual data representation. Functionality to sort by additional parameters is in progress.
+This project is currently in development.
 
 
 ## Installation and Setup Instructions
