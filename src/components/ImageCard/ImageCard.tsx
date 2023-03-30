@@ -13,8 +13,7 @@ const ImageCard: FC = () => {
             Card title
           </h5>
           <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
           <button
             type="button"
@@ -22,7 +21,7 @@ const ImageCard: FC = () => {
             data-te-ripple-init
             data-te-ripple-color="light"
           >
-            Button
+            Link
           </button>
         </div>
       </div>

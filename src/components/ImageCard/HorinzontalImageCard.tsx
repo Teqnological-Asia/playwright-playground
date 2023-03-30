@@ -1,5 +1,5 @@
 import { FC } from "react";
-import image from "@assets/images/vertical.jpg";
+import image from "@assets/images/photo-1679678691014-eba529defb2c.webp";
 
 const HorizontalImageCard: FC = () => {
   return (
@@ -15,9 +15,10 @@ const HorizontalImageCard: FC = () => {
           </h5>
           <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
             This is a wider card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.
+            content. This content is a little bit longer. his is a wider card with supporting text
+            below as a natural lead-in to additional content. This content is a little bit longer.
           </p>
-          <p className="text-xs text-neutral-500 dark:text-neutral-300">Last updated 3 mins ago</p>
+          <p className="text-xs text-neutral-500 dark:text-neutral-300">Last updated 10 mins ago</p>
         </div>
       </div>
     </div>
