@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import styled from "styled-components";
-import { Pad, Screen } from "./components";
-import { Digit, Operator } from "./types";
+import { Digit, Operator } from "@/components/Calculator/types";
+import { Pad, Screen } from "@/components/Calculator/components";
 
 const Container = styled.div`
   width: 100%;

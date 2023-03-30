@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/experimental-ct-react";
 import { Page } from "@playwright/test";
-import Login from "./Login";
+import Login from "@/components/MockLogin/Login";
 
 const mockSetLocalStorage = async (page: Page) => {
   await page.evaluate(() =>

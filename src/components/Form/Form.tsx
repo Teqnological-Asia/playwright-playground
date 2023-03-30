@@ -1,7 +1,6 @@
 import { FC, useState } from "react";
 import axios from "axios";
-import type { Country } from "./types";
-import "../../index.css";
+import type { Country } from "@/components/Form/types";
 
 const ENDPOINT = "https://restcountries.com/v3.1/name";
 

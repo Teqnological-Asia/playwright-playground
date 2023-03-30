@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/experimental-ct-react";
-import Calculator from "./Calculator";
+import Calculator from "@/components/Calculator/Calculator";
 
 test("should renders", async ({ mount }) => {
   const component = await mount(<Calculator />);

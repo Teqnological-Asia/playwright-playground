@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/experimental-ct-react";
 import { Page } from "@playwright/test";
-import Interceptor from "./Interceptor";
+import Interceptor from "@/components/Interceptor/Interceptor";
 
 const mockAbortAnalytics = async (page: Page) => {
   await page.route(/.*(boredapi|picsum).*/, (route) => route.abort());

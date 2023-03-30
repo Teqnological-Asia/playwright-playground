@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
 import axios from "axios";
-import type { Country } from "../../Form/types";
+import type { Country } from "@/components/Form/types";
 
 interface Props {
   title: string;
