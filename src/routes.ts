@@ -28,6 +28,10 @@ const routes: Route[] = [
     path: "/login",
     title: "Mock Login E2E",
   },
+  {
+    path: "/components",
+    title: "Components",
+  },
 ];
 
 export default routes;
